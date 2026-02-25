@@ -28,12 +28,6 @@ class WorkerSignals(QObject):
 
 
 class ExtractWorker(QRunnable):
-    """
-    稳定版策略（适配你当前 core.pdf_extract.extract_folder_hits 的接口）：
-    - 仍然只调用一次 extract_folder_hits(folder, ...)
-    - 进度条显示“阶段进度”（不造假实时 %）
-    - status 提示当前阶段 + PDF 数量
-    """
     def __init__(self, folder, keywords, use_regex, en_boundary, dedup):
         super().__init__()
         self.folder = folder
